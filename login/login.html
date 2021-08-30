@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="head">
+        <img src="../img/login-head.png" alt="">
+        <input type="text" class="???">
+    </div>
+    <div class="body">
+        <div class="true-content">
+            <!-- 用于设置最大宽度max-width -->
+            <div class="login-wrapper">
+                <div class="switch">
+                    <div class="switch-login active">
+                        账户登录
+                    </div>
+                    <div class="switch-quickly">
+                        快捷登录
+                    </div>
+                </div>
+                <div class="account-login display-block">
+                    <input type="text" name="zhanghao" placeholder="账号/邮箱/手机号" class="login-inpute">
+                    <input type="password" name="mima" placeholder="密码" class="login-inpute">
+                    <input type="radio" name="miandenglu" value="" class="login-radio">
+                    <span>30天免登录</span>
+                    <span>忘记密码？</span>
+                    <a href="">免费注册</a>
+
+                    <input type="submit" name="lijilogin" value="立即登录" class="login-submit submit-fir">
+                    <input type="button" name="qiye" value="企业登录入口" class="login-submit">
+
+
+                </div>
+                <div class="quickly-login">
+                    <input type="text" name="zhanghao" placeholder="手机号码" class="login-inpute">
+                    <input type="password" name="mima" placeholder="短信验证码" class="login-inpute">
+                    <input type="radio" name="miandenglu" value="" class="login-radio">
+                    <span>30天免登录</span>
+                    <span>忘记密码？</span>
+                    <a href="">免费注册</a>
+                    <input type="button" name="lijilogin" value="立即登录" class="login-submit submit-fir">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var swLogin = document.querySelector(".switch-login");
+        var swQuickly = document.querySelector(".switch-quickly");
+        var account = document.querySelector(".account-login");
+        var quickly = document.querySelector(".quickly-login");
+        swLogin.onclick = function() {
+            if (swQuickly.classList.contains("active")) {
+                swQuickly.classList.remove("active");
+            }
+            swLogin.classList.add("active");
+            account.style.display = "block";
+            quickly.style.display = "none";
+            console.log(account.style.display);
+
+        }
+        swQuickly.onclick = function() {
+            if (swLogin.classList.contains("active")) {
+                swLogin.classList.remove("active");
+            }
+            swQuickly.classList.add("active");
+            //
+            quickly.style.display = "block";
+            account.style.display = "none";
+            console.log(account.style.display);
+            console.log(quickly.style.display);
+        }
+    </script>
+    <script src="login.js"></script>
+    <script src="../public/js-cookie.js"></script>
+</body>
+
+</html>

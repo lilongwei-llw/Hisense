@@ -1,0 +1,18 @@
+address-list{
+	width: 1300px;
+	display: block;
+}
+.address-list li{
+	width: 360px;
+	height: 200px;
+	border: 2px solid bisque;
+	display: inline-block;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	padding: 15px;
+	vertical-align: top;
+}
+.address-list li span{
+	display: block;
+	height: 30px;
+}

@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    font-size: 0;
+    text-decoration: none;
+}
+
+.jiewei {
+    position: relative;
+    /* text-align: center; */
+    overflow: hidden;
+    height: 36px;
+}
+
+.main-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.black-tonglan {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 36px;
+    left: 0;
+    /* 不加left：0左边缺一块 */
+}
+
+.black-tonglan-text {
+    width: 1200px;
+    height: 36px;
+    /* background-color: aliceblue; */
+    margin: 0 auto;
+}
+
+.black-tonglan-text>a {
+    font-size: 12px;
+    color: rgb(162, 162, 162);
+    margin-right: 15px;
+    line-height: 36px;
+}
+
+.black-tonglan-list {
+    /* display: inline-block; */
+    float: right;
+}
+
+.black-tonglan-list>li {
+    font-size: 12px;
+    color: rgb(162, 162, 162);
+    margin-left: 15px;
+    line-height: 36px;
+    display: inline-block;
+}
+
+.center-block {
+    width: 980px;
+    border: 0.5px solid rgb(226, 226, 226);
+    border-radius: 4px;
+    margin: 40px auto;
+}
+
+.left-div {
+    width: 150px;
+    display: inline-block;
+    border-right: 0.5px solid rgb(226, 226, 226);
+}
+
+.security-title {
+    width: 100%;
+    height: 51px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 51px;
+    display: inline-block;
+    border-bottom: 0.5px solid rgb(226, 226, 226);
+}
+
+.security-list {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    color: #717171;
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.security-list:hover {
+    background-color: rgb(225, 228, 234);
+}
+
+.active {
+    color: white;
+    background-color: rgb(0, 161, 215);
+}
+
+.right-div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.setting-warp {
+    width: 829px;
+    position: relative;
+    display: none;
+}
+
+.display {
+    display: block;
+}
+
+.warp-title {
+    border-bottom: 0.5px solid rgb(226, 226, 226);
+    box-sizing: border-box;
+    padding-left: 20px;
+    color: #00A1D6;
+    font-size: 14px;
+    height: 51.5px;
+    line-height: 51px;
+    width: 829px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.warp-content {
+    width: 829px;
+    position: absolute;
+    left: 0;
+    top: 51.5px;
+}
+
+.warp-content img {
+    width: 829px;
+}

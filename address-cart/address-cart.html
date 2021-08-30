@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="address-cart.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <iframe src="../public/head.html" style="width: 100%;height: 36px;border: none;"></iframe>
+    <div style="width: 100;height: 64px;background-color: white;">
+        <div style="width: 1200px;height: 64px;background-color: white;margin: 0 auto;">
+            <img src="img/hisense.png" alt="" style="width:152px;height: auto;" onclick="window.location.replace('../index/index.html');">
+            <span style="font-size: 16px;line-height: 64px;margin-left: 10px;">订单确认</span>
+        </div>
+    </div>
+    <div class="remove-mengban" style="width: 100%;height: 100%;background-color: rgb(0,0,0,0.3);position: absolute;z-index: 900;display: none;">
+        <div class="remove-div" style="width: 286px;height: 160px;padding: 24px 20px 20px 24px;background-color: white;margin:150px auto;box-sizing: border-box;">
+            <span style="font-size: 16px;display: block;margin-left: 20px;">删除地址？</span>
+            <span style="font-size: 12px;margin-top: 12px;display: block;margin-left: 20px;">删除地址</span>
+            <input class="remove-qx" type="button" value="取消" style="color: black; font-size: 14px; width: 58px;height: 32px;margin: 32px 10px 0 0;border: 0.5px solid #777;margin-left: 100px;">
+            <input class="remove-qd" type="button" value="确定" style="color: white; font-size: 14px;width: 58px;height: 32px;margin: 32px 10px 0 0;background-color: rgb(0,170,166);">
+        </div>
+    </div>
+    <div class="change-mengban">
+
+    </div>
+    <div class="new-address-mengban" style="position: absolute;height: 100%;">
+        <div class="new-address-wrapper">
+            <span class="new-header">
+                新增收货地址
+            </span>
+            <form name="addressEdit">
+                <input type="hidden" name="id" value="0" class="hidden" />
+                <div class="form-item-group">
+                    <label for="">所在地区 </label>
+                    <select class="region-province" style="width: 80px;"></select>
+                    <select class="region-city"></select>
+                    <select class="region-area"></select>
+                    <select class="region-street"></select>
+                </div>
+                <div class="form-item-group biggermore">
+                    <label for="">具体地址</label>
+                    <input type="text" name="receiveDetail" class="receiveDetail" />
+                </div>
+                <div class="form-item-group">
+                    <label for="">收货人</label>
+                    <input type="text" name="receiveName" class="receiveName" />
+                </div>
+                <div class="form-item-group">
+                    <label for="">联系电话</label>
+                    <input type="text" name="receivePhone" class="receivePhone" />
+                </div>
+                <div class="form-item-group">
+                    <label for="">固定电话</label>
+                    <input type="text" name="fiexPhone" />
+                </div>
+                <div class="form-item-group">
+                    <label for="">邮编</label>
+                    <input type="text" name="youbian" />
+                </div>
+
+                <div class="dialog-footer">
+                    <button type="button" class="btn-ok">确定</button>
+                    <button type="button" class="btn-cancel">取消</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="main-wrapper">
+        <div class="address-title" style="margin-top: 20px;">
+            <span style="font-size: 24px;width: 100%;height: 30px;display: block;margin-bottom: 15px;">选择收货地址</span>
+            <div class="new-address" style="display: inline-block;width: 284px;height: 136px;margin: 0 12px 12px 0;">
+                <img class="new-address" src="img/new-address.png" alt="" style="width: 284px;height: 136px;">
+            </div>
+        </div>
+        <div class="details">
+            <span style="font-size: 24px;width: 100%;height: 30px;display: block;margin: 15px auto;">商品详情</span>
+            <div style="width: 660px;height: 62px;padding: 20px 20px 8px 16px;font-size: 14px;box-sizing: border-box;display: inline-block;background-color: white;">商品详情</div>
+            <div style="width: 170px;height: 62px;font-size: 14px;padding: 20px 20px 8px 0;box-sizing: border-box;display: inline-block;background-color: white;">单价/元</div>
+            <div style="width: 150px;height: 62px;font-size: 14px;padding: 20px 20px 8px 0;box-sizing: border-box;display: inline-block;background-color: white;">数量</div>
+            <div style="width: 220px;height: 62px;font-size: 14px;padding: 20px 20px 8px 0;box-sizing: border-box;display: inline-block;background-color: white;">小计</div>
+            <!--  -->
+            <div class="message">
+                <img src="img/btv1.png" alt="">
+                <span class="one-m">海信【75L9F】75吋/纯净三色光源/107%超广色域/Air超轻屏/3+128G大内存激光电视</span>
+                <span class="two-m">￥13999</span>
+                <span class="three-m">x1</span>
+                <span class="four-m">￥13999</span>
+            </div>
+            <div class="message">
+                <img src="img/btv2.png" alt="">
+                <span class="one-m">海信【KFR-72LW/S600-X1】3匹/新一级能效/语音智控/全域净化/智能睡眠空调</span>
+                <span class="two-m">￥5999</span>
+                <span class="three-m">x1</span>
+                <span class="four-m">￥13999</span>
+            </div>
+            <div class="message">
+                <img src="img/btv3.png" alt="">
+                <span class="one-m">海信【65E8D】65英寸/ULED量子点/HiTable社交系统/AI声控/悬浮全面屏电视</span>
+                <span class="two-m">￥5699</span>
+                <span class="three-m">x1</span>
+                <span class="four-m">￥5699</span></div>
+            <div class="message">
+                <img src="img/btv4.png" alt="">
+                <span class="one-m">【0元安装】海信【65E9F】65英寸/ULED超画质/百级分区/量子点画质旗舰电视</span>
+                <span class="two-m">￥6999</span>
+                <span class="three-m">x1</span>
+                <span class="four-m">￥6999</span></div>
+        </div>
+        <div class="order" style="width:100%;background-color:white;margin: 35xp 0 20px 0;padding:30px 36px 30px 36px;">
+            <div class="flex-line">
+                <div class="line-pro">
+                    <div class="left-text">给商家留言</div>
+                    <input type="text" name="" id="" style="display: inline-block;width: 500px;height: 40px;font-size: 14px;border: 00.5px solid rgba(158, 158, 158, 0.3);" placeholder="留言信息，限制45字">
+                </div>
+                <div class="line-pro">
+                    <div class="right-text">5件商品，总金额：</div>
+                    <div class="r-num">￥39095</div>
+                </div>
+            </div>
+            <div class="flex-line">
+                <div class="line-pro">
+                    <div class="left-text">订单优惠</div>
+                    <div style="display: inline-block;font-size: 14px;">没有优惠</div>
+                </div>
+                <div class="line-pro">
+                    <div class="right-text">订单优惠：</div>
+                    <div class="r-num">-￥0</div>
+                </div>
+            </div>
+            <div class="flex-line">
+                <div class="line-pro">
+                    <div class="left-text" style="display: inline-block;height: 100%;">平台优惠 </div>
+                    <select name="youhui" id="" style="display: inline-block;width: 250px;height: 40px;font-size: 14px;border: 00.5px solid rgba(158, 158, 158, 0.3);">
+                        <option value="">【新用户专享】999+50元优惠券</option>
+                        <option value="">【老用户专享】999+150元优惠券</option>
+                        <option value="">【很老的用户专享】999+250元优惠券</option>
+                    </select>
+                </div>
+                <div class="line-pro">
+                    <div class="right-text">平台优惠：
+                    </div>
+
+                    <div class="r-num">-￥200</div>
+                </div>
+            </div>
+            <div class="flex-line">
+                <div class="line-pro">
+                    <div class="left-text">发票信息</div>
+                </div>
+                <div class="line-pro">
+                    <div class="right-text">运费：</div>
+                    <div class="r-num">￥0</div>
+                </div>
+            </div>
+            <div class="flex-line">
+                <div class="line-pro">
+                    <div class="left-text">收货地址</div>
+                </div>
+                <div class="line-pro">
+                    <div class="right-text">可使用0积分抵扣0.00元</div>
+
+                </div>
+            </div>
+            <div class="flex-line">
+                <div class="line-pro"></div>
+                <div class="line-pro">
+                    <span style="font-size: 14px;">应付总金额：</span>
+                    <span style="  font-size: 32px;
+                    color: #D9161C;
+                    line-height: 40px;
+                    vertical-align: middle;">￥38895</span>
+                </div>
+            </div>
+            <div class="flex-line">
+                <div></div>
+                <div><input type="button" value="提交订单" style="width: 104px;height: 48px;background-color: rgb(217,22,28);color: white;font-size: 16px;" onclick="window.location.replace('../pay/pay.html') "></div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="address-cart.js"></script>
+    <script type="text/javascript" src="../public/regions.js">
+    </script>
+    <script type="text/javascript" src="../public/regions_picker.js">
+    </script>
+</body>
+
+</html>

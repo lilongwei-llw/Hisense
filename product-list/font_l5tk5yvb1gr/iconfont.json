@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "689253",
+      "name": "箭头 上升",
+      "font_class": "jiantoushangsheng",
+      "unicode": "e7f1",
+      "unicode_decimal": 59377
+    }
+  ]
+}

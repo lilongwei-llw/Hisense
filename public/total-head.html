@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+            font-size: 0;
+            text-decoration: none;
+        }
+        
+        body {
+            background-color: transparent;
+        }
+        
+        .fixed-wrapper {
+            width: 64px;
+            height: 256px;
+            position: fixed;
+            right: 10px;
+            bottom: 0;
+            background-color: white;
+            z-index: 999;
+        }
+        
+        .fixed-wrapper .fixedtable {
+            padding-top: 10px;
+            width: 100%;
+            height: 64px;
+            text-align: center;
+            border-bottom: 1px solid rgb(134, 134, 134, 0.3);
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        
+        .fixedtable span {
+            font-size: 12px;
+            width: 50px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .return-top {
+            display: none;
+        }
+        
+        body {
+            background-color: transparent;
+            /* position: relative; */
+        }
+        
+        .head-img {
+            width: 100%;
+            /* position: relative; */
+        }
+        
+        .head-img>img {
+            width: 100%;
+        }
+        
+        .jiewei {
+            /* text-align: center; */
+            overflow: hidden;
+        }
+        
+        .main-wrapper {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .black-tonglan {
+            position: absolute;
+            background-color: rgb(68, 68, 68);
+            width: 100%;
+            height: 36px;
+            left: 0;
+            /* 不加left：0左边缺一块 */
+        }
+        
+        .black-tonglan-text {
+            width: 1200px;
+            height: 36px;
+            /* background-color: aliceblue; */
+            margin: 0 auto;
+        }
+        
+        .black-tonglan-text>a {
+            font-size: 12px;
+            color: rgb(162, 162, 162);
+            margin-right: 15px;
+            line-height: 36px;
+        }
+        
+        .black-tonglan-list {
+            /* display: inline-block; */
+            float: right;
+        }
+        
+        .black-tonglan-list>li {
+            font-size: 12px;
+            color: rgb(162, 162, 162);
+            margin-left: 15px;
+            line-height: 36px;
+            display: inline-block;
+        }
+        
+        .black-tonglan-list>li>a {
+            font-size: 12px;
+            color: rgb(162, 162, 162);
+            line-height: 36px;
+            display: inline-block;
+        }
+        
+        .black-tonglan-list>li>a:hover {
+            color: rgb(0, 170, 166);
+        }
+        
+        .menu {
+            height: 74px;
+            background-color: white;
+            width: 100%;
+            position: absolute;
+            top: 36px;
+            font-size: 0;
+            right: 0;
+            box-shadow: 0px 5px 60px -30px rgb(83, 83, 83);
+            top: 132px
+        }
+        
+        .menu-wrapper {
+            width: 1200px;
+            margin: 0 auto;
+            height: 74px;
+            /* position: relative; */
+            z-index: 999;
+            /* text-align: center; */
+        }
+        
+        .menu-back {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 74px;
+            width: 100%;
+            height: 300px;
+            background-color: rgb(247, 247, 247);
+            z-index: 9999;
+        }
+        
+        .total-back {
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 74px;
+            background-color: rgb(247, 247, 247);
+            height: 300px;
+            z-index: 100;
+        }
+        
+        .menu-ul li:hover+.menu-back {
+            display: block;
+        }
+        
+        .menu-back:hover {
+            display: block;
+        }
+        
+        .hisen {
+            width: 152px;
+            height: 42.55px;
+            vertical-align: middle;
+        }
+        
+        .menu-ul {
+            display: inline-block;
+            height: 100%;
+            /* margin-top: -13px; */
+            /* ??????为什么 */
+            vertical-align: middle;
+            margin-left: 52px;
+            /* height: 74px; */
+        }
+        
+        .menu-ul>li {
+            display: inline-block;
+            height: 100%;
+            padding: 0 18px;
+        }
+        
+        .menu-ul>li>a {
+            display: block;
+            font-size: 16px;
+            line-height: 74px;
+            color: black;
+        }
+        
+        .menu-ul>li>a:hover {
+            color: rgb(0, 170, 166);
+        }
+        
+        .js-displayblock {
+            display: block;
+        }
+        
+        .js-displaynone {
+            display: none;
+        }
+        
+        .sec-menu {
+            background-color: rgb(240, 240, 240);
+            position: relative;
+            width: 100%;
+            height: 300px;
+            top: 110px;
+            z-index: -1;
+        }
+        
+        .moban {
+            /* background-color: #0077AA; */
+            width: 1200px;
+            left: 50%;
+            margin-left: -600px;
+            /* 绝对定位的居中方法 */
+            height: 100%;
+            position: absolute;
+        }
+        
+        .left-block {
+            display: inline-block;
+            height: 204px;
+            width: 800px;
+            /* background-color: #B3D4FC; */
+            position: absolute;
+            left: 0;
+        }
+        
+        .left-list {
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+        }
+        
+        .left-list>li {
+            width: 188px;
+            height: 44px;
+            display: inline-block;
+            margin-bottom: 24px;
+            /* background-color: #0077AA; */
+            font-size: 15px;
+        }
+        
+        .left-list>li>img {
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+        
+        .left-list>li>span {
+            font-size: 15px;
+            vertical-align: middle;
+        }
+        
+        .right-block {
+            display: inline-block;
+            width: 400px;
+            height: 300px;
+            /* background-color: #CCCCCC; */
+            position: absolute;
+            left: 800px;
+        }
+        
+        .right-list {
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+        }
+        
+        .right-list>li {
+            height: 45%;
+            width: 49%;
+            display: inline-block;
+            background-color: white;
+            margin-right: 1%;
+            margin-bottom: 1%;
+            /* margin-top: 1%; */
+            text-align: center;
+        }
+        
+        .right-list>li>img {
+            max-width: 70%;
+            max-height: 70%;
+            width: auto;
+            height: auto;
+        }
+        
+        .right-list>li>span {
+            display: block;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        
+        .list-none {
+            display: none;
+        }
+        
+        .list-block {
+            display: block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="head-img"><img src="img/head-img.jpg" alt=""></div>
+    <div class="jiewei">
+        <div class="main-wrapper">
+            <div class="black-tonglan">
+                <div class="black-tonglan-text">
+                    <a>海信官网</a>
+                    <a>7月1日-7月13日全场活动获奖名单公示</a>
+                    <ul class="black-tonglan-list">
+                        <li class="iconfont icon-yonghu login-display" style="font-size: 22px;color: white;"></li>
+                        <li class="login-display">个人中心</li>
+                        <li class="login-display"><a href="JavaScript:Cookies.remove('username');location.reload();">退出</a></li>
+                        <li class="login-none"><a href="../login/login.html">登录</a></li>
+                        <li class="login-none"><a href="">注册</a></li>
+                        <li>消息信息</li>
+                        <li>帮助中心</li>
+                        <li>门店查询</li>
+                        <li>外部合作</li>
+                        <li>下载APP</li>
+                        <li>网站导航</li>
+                        <li><a href="../cart/cart.html">购物车</a></li>
+                        <li class="iconfont icon-gouwuche" style="margin-left: 2px;font-size: 14px;">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu">
+
+                <div class="menu-wrapper">
+                    <img src="img\hisense.png" alt="" class="hisen">
+                    <ul class="menu-ul">
+                        <li><a href="javascript:void(0)">官网</a></li>
+                        <li><a href="javascript:void(0)">全屋有新风</a></li>
+                        <li><a href="">电视</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="img/tv1.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>65英寸</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>50英寸</span></li>
+                                        <li><img src="img/tv4.png" alt=""><span>55英寸</span></li>
+                                        <li><img src="img/tv5.png" alt=""><span>40-43英寸</span></li>
+                                        <li><img src="img/tv6.png" alt=""><span>32英寸</span></li>
+                                        <li><img src="img/tv1.png" alt=""><span>Vidda</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>东芝</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>商用显示</span></li>
+                                        <li><span>进入频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">激光</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="img/tv4.png" alt=""><span>100英寸</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>88英寸</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>80英寸</span></li>
+                                        <li><img src="img/tv1.png" alt=""><span>75英寸</span></li>
+                                        <li><span>进入频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">空调</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="src/32.png" alt=""><span>大1匹</span></li>
+                                        <li><img src="src/31.png" alt=""><span>1.5匹</span></li>
+                                        <li><img src="src/31.png" alt=""><span>2匹</span></li>
+                                        <li><img src="src/32.png" alt=""><span>3匹</span></li>
+                                        <li><img src="src/32.png" alt=""><span>10-15M²</span></li>
+                                        <li><img src="src/32.png" alt=""><span>16-24M²</span></li>
+                                        <li><img src="src/31.png" alt=""><span>21-30M²</span></li>
+                                        <li><img src="src/31.png" alt=""><span>30-45M²</span></li>
+                                        <li><img src="src/31.png" alt=""><span>新风空调</span></li>
+                                        <li><span>进入频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="src/34.png" alt=""><span>海信1.5匹/一级变频</span></li>
+                                        <li><img src="src/33.png" alt=""><span>海信1.5匹/新一级能效</span></li>
+                                        <li><img src="src/33.png" alt=""><span>科龙1.5匹/新一级变频</span></li>
+                                        <li><img src="src/34.png" alt=""><span>科龙3匹/新一级变频</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">冰箱</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="src/41.png" alt=""><span>对开门</span></li>
+                                        <li><img src="src/42.png" alt=""><span>十字对开门</span></li>
+                                        <li><img src="src/43.png" alt=""><span>法式多门</span></li>
+                                        <li><img src="src/42.png" alt=""><span>三门</span></li>
+                                        <li><img src="src/41.png" alt=""><span>双门/单门</span></li>
+                                        <li><img src="src/43.png" alt=""><span>海信冰箱</span></li>
+                                        <li><img src="src/42.png" alt=""><span>容声冰箱</span></li>
+                                        <li><img src="src/41.png" alt=""><span>爆款推荐</span></li>
+                                        <li><span>进入频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="src/45.png" alt=""><span>海信519升/对开门/变频</span></li>
+                                        <li><img src="src/44.png" alt=""><span>海信322升/法师开门</span></li>
+                                        <li><img src="src/44.png" alt=""><span>容声646升/双开门</span></li>
+                                        <li><img src="src/45.png" alt=""><span>海信220升/大法师双开门</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">洗衣机</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="src/51.png" alt=""><span>10公斤以上</span></li>
+                                        <li><img src="src/52.png" alt=""><span>9公斤</span></li>
+                                        <li><img src="src/53.png" alt=""><span>8公斤</span></li>
+                                        <li><img src="src/52.png" alt=""><span>6-7公斤</span></li>
+                                        <li><img src="src/53.png" alt=""><span>迷你洗衣机</span></li>
+                                        <li><img src="src/51.png" alt=""><span>滚筒洗衣机</span></li>
+                                        <li><img src="src/52.png" alt=""><span>波轮洗衣机</span></li>
+                                        <li><img src="src/53.png" alt=""><span>洗烘一体机</span></li>
+                                        <li><img src="src/52.png" alt=""><span>变频洗衣机</span></li>
+                                        <li><img src="src/51.png" alt=""><span>爆家居款</span></li>
+                                        <li><span>进入频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="src/55.png" alt=""><span>海信10公斤/西红一体</span></li>
+                                        <li><img src="src/54.png" alt=""><span>海信10公斤/滚筒</span></li>
+                                        <li><img src="src/54.png" alt=""><span>海信3公斤/波轮</span></li>
+                                        <li><img src="src/55.png" alt=""><span>8公斤/全自动</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">冷柜</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="src/61.png" alt=""><span>单温柜</span></li>
+                                        <li><img src="src/61.png" alt=""><span>双温柜</span></li>
+                                        <li><img src="src/61.png" alt=""><span>冰吧</span></li>
+                                        <li><span>进入频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="src/62.png" alt=""><span>海信308升/单温</span></li>
+                                        <li><img src="src/63.png" alt=""><span>309升/一级能效</span></li>
+                                        <li><img src="src/63.png" alt=""><span>容声273升/爽文</span></li>
+                                        <li><img src="src/62.png" alt=""><span>海信100升/家用冰柜</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">厨卫</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="src/71.png" alt=""><span>燃气灶</span></li>
+                                        <li><img src="src/72.png" alt=""><span>热水器</span></li>
+                                        <li><img src="src/73.png" alt=""><span>油烟机</span></li>
+                                        <li><img src="src/72.png" alt=""><span>蒸烤箱</span></li>
+                                        <li><img src="src/71.png" alt=""><span>洗碗机</span></li>
+                                        <li><img src="src/73.png" alt=""><span>烟灶套装</span></li>
+                                        <li><span>进入频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸热水器</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮2000W加热</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮50升</span></li>
+                                        <li><img src="img/btv1.png" alt=""><span>65升悬浮全面屏</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">空净</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="img/tv1.png" alt=""><span>空气净化机</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>树新风机</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>除湿姬</span></li>
+                                        <li><img src="img/tv4.png" alt=""><span>进频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="img/btv1.png" alt=""><span>出卖净化/卧室专用</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>海信0.1秒净化</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>海信不带净化</span></li>
+                                        <li><img src="img/btv1.png" alt=""><span>不带净化带点火</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">手机</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="img/tv1.png" alt=""><span>阅读手机</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>双拼手机</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>护眼平板</span></li>
+                                        <li><img src="img/tv4.png" alt=""><span>全拼手机</span></li>
+                                        <li><img src="img/tv5.png" alt=""><span>进入频道></span></li>
+
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">聚享家</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="img/tv1.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv4.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv5.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv6.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv1.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv4.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv5.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv6.png" alt=""><span>75英寸</span></li>
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <li><a href="javascript:void(0)">政企乐购</a></li>
+                        <div class="menu-back">
+                            <div class="dianshi moban">
+                                <div class="left-block">
+                                    <ul class="left-list">
+                                        <li><img src="img/tv1.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv4.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv5.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv6.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv1.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv2.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv3.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv4.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv5.png" alt=""><span>75英寸</span></li>
+                                        <li><img src="img/tv6.png" alt=""><span>75英寸</span></li>
+                                    </ul>
+                                </div>
+                                <div class="right-block">
+                                    <ul class="right-list">
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv2.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                        <li><img src="img/btv1.png" alt=""><span>65英寸悬浮全面屏</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 复位 -->
+    <link rel="stylesheet" type="text/css" href="../public/reset.css" />
+    <!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="../public/public.css" />
+    <!-- 个体样式 -->
+    <link rel="stylesheet" type="text/css" href="address.css" />
+    <style>
+        .default-wrapper {
+            position: relative;
+            top: 20px;
+            left: 150px;
+        }
+        
+        .default-wrapper .default {
+            display: none;
+        }
+        
+        .default-wrapper.is-default .default {
+            display: block;
+        }
+        
+        .default-wrapper .btn-default {
+            display: block;
+        }
+        
+        .default-wrapper.is-default .btn-default {
+            display: none;
+        }
+        
+        .edit-dialog-wrapper {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: none;
+        }
+        
+        .edit-dialog-wrapper.show {
+            display: block;
+        }
+        
+        .edit-dialog {
+            background-color: #fff;
+            border-radius: 4px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px 40px;
+        }
+        
+        .dialog-header h2 {
+            text-align: center;
+        }
+        
+        .dialog-footer {
+            text-align: center;
+        }
+        
+        .dialog-footer button {
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0 10px;
+            font-size: 14px;
+            background-color: #0094ff;
+            color: #fff;
+        }
+        
+        .form-item-group {
+            margin: 30px 0;
+            white-space: nowrap;
+        }
+        
+        .form-item-group label {
+            display: inline-block;
+            font-size: 14px;
+            width: 120px;
+            text-align: right;
+        }
+        
+        .form-item-group input {
+            width: 400px;
+        }
+    </style>
+    <title></title>
+</head>
+
+<body>
+    <!-- 	<select name="" class="region-province">
+	</select>
+	<select name="" class="region-city">
+	</select>
+	<select name="" class="region-area">
+	</select>
+	<select name="" class="region-street">
+	</select> -->
+    <div class="edit-dialog-wrapper">
+        <div class="edit-dialog">
+            <form name="addressEdit">
+                <input type="hidden" name="id" value="0" />
+                <div class="dialog-header">
+                    <h2>—— 地址编辑 ——</h2>
+                </div>
+                <div class="form-item-group">
+                    <label for="">收货人姓名：</label>
+                    <input type="text" name="receiveName" />
+                </div>
+                <div class="form-item-group">
+                    <label for="">收货人电话：</label>
+                    <input type="text" name="receivePhone" />
+                </div>
+                <div class="form-item-group">
+                    <label for="">收货人地址：</label>
+                    <select class="region-province"></select> -
+                    <select class="region-city"></select> -
+                    <select class="region-area"></select> -
+                    <select class="region-street"></select>
+                </div>
+                <div class="form-item-group">
+                    <label for="">收货人详细地址：</label>
+                    <input type="text" name="receiveDetail" />
+                </div>
+                <div class="dialog-footer">
+                    <button type="button" class="btn-ok">确定</button>
+                    <button type="button" class="btn-cancel">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <ul class="address-list">
+        <li class="btn-add">
+            +
+        </li>
+
+    </ul>
+
+    <!-- regionPicker.get()取地区的值 -->
+    <!-- regionPicker.reset()地区复位 -->
+    <!-- regionPicker.set(地区的值)重置地址显示为括号里的地址 -->
+
+
+    <script type="text/javascript" src="../public/regions.js">
+    </script>
+    <script type="text/javascript" src="../public/regions_picker.js">
+    </script>
+    <script type="text/javascript" src="address.js">
+    </script>
+</body>
+
+</html>

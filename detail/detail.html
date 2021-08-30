@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="detail.css">
+    <style>
+        .main-wrapper {
+            width: 1200px;
+            position: relative;
+            top: 220px;
+            margin: 0 auto;
+        }
+        
+        .left-wrapper {
+            display: inline-block;
+            width: 550px;
+            height: 717px;
+            box-sizing: border-box;
+        }
+        
+        .right-wrapper {
+            display: inline-block;
+            width: 600px;
+            height: 692px;
+            background-color: white;
+            margin-left: 50px;
+            box-sizing: border-box;
+        }
+        
+        .item-title {
+            width: 100%;
+            height: 243px;
+            padding-top: 66px;
+            box-sizing: border-box;
+        }
+        
+        .line-one span,
+        .line-two p {
+            font-size: 14px;
+        }
+        
+        input {
+            border: 1px solid #ccc;
+            font-size: 18px;
+        }
+        
+        .img-wrapper {
+            width: 550px;
+            height: 550px;
+            position: relative;
+        }
+        
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .img-list {
+            width: 550px;
+            height: 160px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .img-list .list {
+            margin-top: 15px;
+            width: 88px;
+            height: 88px;
+            border: 0.5px solid rgb(160, 160, 160, 0.5);
+        }
+        
+        .img-list .active {
+            border: 0.8px solid rgb(0, 158, 161);
+        }
+        
+        .line img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <iframe src="../public/total-head.html" scrolling="no" frameborder="0" style="width: 100%;min-height: 520px;border: none;position: absolute;z-index: 999;"></iframe>
+    <!-- 通用头部 -->
+    <div class="main-wrapper" style="vertical-align: top;">
+        <div class="left-wrapper">
+
+            <!--放大镜代码  -->
+            <div class="img-wrapper">
+                <img src="img/3.png" alt="" class="big-pic">
+                <div class="zoom-mask"></div>
+                <div class="zoom"></div>
+                <div class="zoom-big" style="background-image: url(img/3.png);background-color: rgb(247,247,247);background-size: 200% 200%;"></div>
+            </div>
+            <!--  -->
+
+            <div class="img-list">
+                <div class="list active"><img src="img/8.png" alt=""></div>
+                <div class="list"><img src="img/9.png" alt=""></div>
+                <div class="list"><img src="img/12.png" alt=""></div>
+                <div class="list"><img src="img/10.png" alt=""></div>
+                <div class="list"><img src="img/11.png" alt=""></div>
+            </div>
+        </div>
+        <div class="right-wrapper" style="vertical-align: top;">
+            <div class="item-title">
+                <div class="t-one" style="width: 100%;font-size: 24px;margin-bottom: 12px;">海信【65E8D】65英寸/ULED量子点/HiTable社交系统/AI声控/悬浮全面屏电视</div>
+                <div class="line-one" style="font-size: 14px;"><span style="font-weight:700;">活动价5699元！</span><span style="color: red;"> 活动页领券更优惠！</span><span>详见</span><span style="color: red;">活动规则；</span></div>
+                <div class="line-two">
+                    <p>●16日10:00-12:00全场瓜分5000元;</p>
+                    <p>●16日21:00-22:00全场瓜分3000元;</p>
+                    <p>●跨品类套购返至高500元补贴、赚积分兑好礼；</p>
+                    <p>●咨询客服优惠20元，送180天延保；</p>
+                </div>
+            </div>
+            <div class="item-titlt-2" style="margin-top: 12px;background-color: rgb(247,247,247); padding: 16px 16px 16px 0;height: 80px;box-sizing: border-box;display: flex;align-items: center;">
+                <span style="font-size: 14px;color: rgb(217,22,28);">￥</span>
+                <span style="font-size:36px; color:rgb(217,22,28);">5699</span>
+                <span style="font-size: 12px;color: #777;">降价提醒</span>
+            </div>
+            <div class="item-title-3" style="margin-top: 10px;height: 55px;padding: 16px 16px 16px 0;display: flex;align-items: center;box-sizing: border-box;">
+                <img src="img/1.png" alt="" style="width: auto;height: 22px;">
+            </div>
+            <div class="item-title-4" style="background-color: rgb(247,247,247);height: 74px;margin: 16px 0;display: flex;align-items: center;box-sizing: border-box;">
+                <img src="img/2.png" alt="" style="height: 100%;">
+            </div>
+            <div class="item-title-5" style="margin-top: 10px;">
+                <span style="font-size: 14px;">选择数量</span>
+                <p></p>
+                <input class="de-btn" type="button" value="-" style="width: 36px;height: 40px;background-color: white;">
+                <input class="number" type="number" value="1" style="width: 64px;height: 40px;box-sizing: border-box;text-align: center;padding-left: 10px;">
+                <input class="in-btn" type="button" value="+" style="width: 36px;height: 40px;background-color: white;">
+            </div>
+            <div class="item-title-6" style="height: 72px;margin: 16px 0;display: flex;align-items: center;box-sizing: border-box;">
+                <input type="button" name="" id="" value="立即购买" style="width: 180px;height: 40px;font-size: 16px;color: white;background-color: rgb(217,22,28);margin-right: 5px;">
+                <input type="button" name="" id="" value="加入购物车" style="width: 180px;height: 40px;font-size: 16px;color: white;background-color: rgb(38,38,38);">
+            </div>
+        </div>
+    </div>
+    <div class="body-2" style="background-color: rgb(247,247,247);">
+        <div class="main-wrapper-2">
+            <div style="width: 1200px;height: 30px;background-color: rgb(247,247,247);"></div>
+            <!-- 四个选项卡的选项 -->
+            <div class="list-option">
+                <div class="option active2">图片详情</div>
+                <div class="option">评价(250)</div>
+                <div class="option">包装及参数</div>
+                <div class="option">服务</div>
+            </div>
+            <div class="list-wrapper" style="position: relative;">
+                <!--图片详情  -->
+                <div class="option-list listdisplay">
+                    <img src="img/a.jpg" alt="">
+                    <img src="img/b.jpg" alt="">
+                    <img src="img/c.jpg" alt="">
+                    <img src="img/d.jpg" alt="">
+                    <img src="img/e.jpg" alt="">
+                    <img src="img/f.jpg" alt="">
+                </div>
+                <!-- 评价 -->
+                <div class="option-list">
+                    <img src="img/aa.png" alt="">
+                    <img src="img/bb.png" alt="">
+                    <img src="img/cc.png" alt="">
+                </div>
+                <!-- 包装及参数 -->
+                <div class="option-list"> <img src="img/1a.png" alt="">
+                    <img src="img/1b.png" alt=""></div>
+
+                <!-- 服务 -->
+                <div class="option-list"> <img src="img/2a.jpg" alt="">
+                    <img src="img/2b.jpg" alt="">
+                    <img src="img/2c.jpg" alt=""></div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <iframe src="../public/foot.html" style="width: 100%;height: 400px;border: none;position: relative;top: 200px; "></iframe>
+    <script src="detail.js"></script>
+</body>
+
+</html>
